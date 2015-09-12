@@ -1,0 +1,29 @@
+{
+  "name": "gOverflow",
+  "version": "1.0.0",
+  "description": "StackOverflow for Galvanize students",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tdkehoe/gOverflow.git"
+  },
+  "keywords": [
+    "CRUSH",
+    "CODE"
+  ],
+  "author": "Thomad David Kehoe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tdkehoe/gOverflow/issues"
+  },
+  "homepage": "https://github.com/tdkehoe/gOverflow",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "monk": "^1.0.1"
+  }
+}

@@ -1,0 +1,69 @@
+<h2>CREATE a New Post</h2>
+
+<table>
+  <tr>
+    <td>
+      <h3>Type of Post: </h3>
+    </td>
+    <td>
+      <form name="newPostType">
+        <label for="selectPostType"></label>
+        <select name="selectPostType" ng-model="posts.type" ng-init="posts.type = 'question'">
+          <option value="question" selected="selected">Question</option>
+          <option value="errorMessage">Error Message</option>
+          <option value="tutorial">Tutorial</option>
+        </select>
+      </form>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>
+      <h3>Project:</h3>
+    </td>
+    <td>
+      <form name="newPostProject"  ng-init="posts.project = 'walkingMan'">
+        <label for="selectPostProject"></label>
+        <select name="selectPostProject" ng-model="posts.project">
+          <option value="walkingMan">Walking Man</option>
+          <option value="musicPlayer">Music Player</option>
+          <option value="movieDatabase">Movie Database</option>
+        </select>
+      </form>
+    </td>
+  </tr>
+</table>
+
+<div ng-show="posts.type === 'question'">
+  <h3>New Question</h3>
+  <form ng-submit="addQuestion()" name="newQuestion">
+    <label for="questionTitle">Question Title: </label>
+      <input type="text" name="questionTitle" ng-model="question.title" /><br />
+    <label for="questionBody">Question Body: </label>
+      <input type="text" name="questionBody" ng-model="question.body" /><br />
+    <label for="questionAuthor">Question Author: </label>
+      <input type="text" name="questionAuthor" ng-model="question.author" /><br />
+    <input type="submit" value="Post Question"></input>
+  </form>
+</div>
+
+<div ng-show="posts.type === 'errorMessage'">
+  <h3>New Error Message</h3>
+  <form ng-submit="newErrorMessage()" name="newErrorMessage">
+    Error Message: <input type="text" ng-model="post.errorMessage" /><br />
+    Filename:  <input type="text" ng-model="post.errorFilename" /> <i>Where did the error occur?</i><br />
+    Description or Solution:  <input type="text" ng-model="post.errorSolution" /><br />
+    <input type="submit" value="Post Error Message"></input>
+  </form>
+</div>
+
+<div ng-show="posts.type === 'tutorial'">
+  <h3>New Tutorial</h3>
+  <form ng-submit="newTutorial()" name="newTutorial">
+    Tutorial Title: <input type="text" ng-model="post.tutorialTitle" /><br />
+    Tutorial Body:  <input type="text" ng-model="post.tutorialBody" /><br />
+    <input type="submit" value="Post Tutorial"></input>
+  </form>
+</div>
