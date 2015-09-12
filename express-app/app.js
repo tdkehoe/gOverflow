@@ -15,4 +15,4 @@ app.use('/api/gOverflow', gOverflow);
 app.listen(process.env.PORT || 8080);
 console.log('Server started on localhost://8080');
 
-// module.exports = app;
+module.exports = app;

@@ -18,33 +18,34 @@
   </tr>
 </table>
 
-<table>
-  <tr>
-    <td>
-      <h3>Project:</h3>
-    </td>
-    <td>
-      <form name="newPostProject"  ng-init="posts.project = 'walkingMan'">
-        <label for="selectPostProject"></label>
-        <select name="selectPostProject" ng-model="posts.project">
-          <option value="walkingMan">Walking Man</option>
-          <option value="musicPlayer">Music Player</option>
-          <option value="movieDatabase">Movie Database</option>
-        </select>
-      </form>
-    </td>
-  </tr>
-</table>
-
 <div ng-show="posts.type === 'question'">
   <h3>New Question</h3>
   <form ng-submit="addQuestion()" name="newQuestion">
     <label for="questionTitle">Question Title: </label>
-      <input type="text" name="questionTitle" ng-model="question.title" /><br />
+      <input type="text" name="questionTitle" ng-model="questions.title" /><br />
     <label for="questionBody">Question Body: </label>
-      <input type="text" name="questionBody" ng-model="question.body" /><br />
+      <input type="text" name="questionBody" ng-model="questions.body" /><br />
     <label for="questionAuthor">Question Author: </label>
-      <input type="text" name="questionAuthor" ng-model="question.author" /><br />
+      <input type="text" name="questionAuthor" ng-model="questions.author" /><br />
+
+    <label for="selectQuestionProject">Project: </label>
+    <select name="selectQuestionProject" ng-model="questions.project"  ng-init="questions.project = 'walkingMan'">
+      <option value="walkingMan">Walking Man</option>
+      <option value="musicPlayer">Music Player</option>
+      <option value="movieDatabase">Movie Database</option>
+    </select>
+
+    <label for="questionFrustration">Frustration Level: </label>
+    <select name="questionFrustration" ng-model="questions.frustration"  ng-init="questions.frustration = '1'">
+      <option value="5">5</option>
+      <option value="4">4</option>
+      <option value="3">3</option>
+      <option value="2">2</option>
+      <option value="1">1</option>
+    </select>
+
+    <br />
+
     <input type="submit" value="Post Question"></input>
   </form>
 </div>

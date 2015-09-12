@@ -1,5 +1,14 @@
 <h1>Home</h1>
 
-{{message}}
+<p class="mean">A MEAN stack CRUD app, using MongoDB, Express, Angular, and Node. Routes: INDEX, NEW, SHOW, EDIT, UPDATE, DESTROY. The Angular routes connect to corresponding Express routes.</p>
 
-View questions
+<h2>INDEX</h2>
+
+<a href="/#/new"><button class="addPostButton">Add a new post</button></a>
+
+
+
+<div ng-repeat="question in questions">
+  <div>{{question.questionTitle}}</div>
+
+</div>
